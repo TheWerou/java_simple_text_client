@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2020-03-23T17:59:36.257858800Z</date>
+  <millis>1584986376257</millis>
+  <nanos>858800</nanos>
+  <sequence>0</sequence>
+  <logger>Main_facade.Log_class.log_gen</logger>
+  <level>CONFIG</level>
+  <class>Main_facade.Log_class.log_gen</class>
+  <method>&lt;init&gt;</method>
+  <thread>1</thread>
+  <message>Configuration done.</message>
+</record>
+<record>
+  <date>2020-03-23T17:59:36.368418500Z</date>
+  <millis>1584986376368</millis>
+  <nanos>418500</nanos>
+  <sequence>1</sequence>
+  <logger>Main_facade.Log_class.log_gen</logger>
+  <level>FINE</level>
+  <class>Main_facade.Log_class.log_gen</class>
+  <method>&lt;init&gt;</method>
+  <thread>1</thread>
+  <message>Finer logged</message>
+</record>
+<record>
+  <date>2020-03-23T17:59:39.694659800Z</date>
+  <millis>1584986379694</millis>
+  <nanos>659800</nanos>
+  <sequence>2</sequence>
+  <logger>Main_facade.Log_class.log_gen</logger>
+  <level>CONFIG</level>
+  <class>Main_facade.Log_class.log_gen</class>
+  <method>CONFIG_log</method>
+  <thread>1</thread>
+  <message>connection made to ip- 192.168.0.106 port 8123</message>
+</record>
+<record>
+  <date>2020-03-23T17:59:52.995016300Z</date>
+  <millis>1584986392995</millis>
+  <nanos>16300</nanos>
+  <sequence>3</sequence>
+  <logger>Main_facade.Log_class.log_gen</logger>
+  <level>CONFIG</level>
+  <class>Main_facade.Log_class.log_gen</class>
+  <method>CONFIG_log</method>
+  <thread>1</thread>
+  <message>connection made to ip- 192.168.0.106 port 8123</message>
+</record>
+<record>
+  <date>2020-03-23T17:59:52.998018300Z</date>
+  <millis>1584986392998</millis>
+  <nanos>18300</nanos>
+  <sequence>4</sequence>
+  <logger>Main_facade.Log_class.log_gen</logger>
+  <level>INFO</level>
+  <class>Main_facade.Log_class.log_gen</class>
+  <method>INFO_log</method>
+  <thread>1</thread>
+  <message>connection ended sucesfully</message>
+</record>
+<record>
+  <date>2020-03-23T17:59:53.002018200Z</date>
+  <millis>1584986393002</millis>
+  <nanos>18200</nanos>
+  <sequence>5</sequence>
+  <logger>Main_facade.Log_class.log_gen</logger>
+  <level>CONFIG</level>
+  <class>Main_facade.Log_class.log_gen</class>
+  <method>CONFIG_log</method>
+  <thread>1</thread>
+  <message>connection made to ip- 192.168.0.106 port 8123</message>
+</record>
