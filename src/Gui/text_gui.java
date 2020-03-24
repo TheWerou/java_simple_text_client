@@ -199,6 +199,7 @@ public class text_gui {
                 System.out.println("Type number to change ");
                 System.out.println("1. present ip   " + db.getIp());
                 System.out.println("2. present port " + db.getPort());
+                System.out.println("3. present nick name" + db.getLogin());
                 System.out.println("RETURN. return to menu");
                 System.out.println("------------------------------");
 
@@ -207,7 +208,7 @@ public class text_gui {
                 if(ans.equals("1")) {
                     System.out.println("Type new ip or RETURN to return");
                     ans = this.scan.nextLine();
-
+                    ans = ans.toUpperCase();
                     if (ans.equals("RETURN")) {
                         return false;
                     } else {
@@ -223,6 +224,16 @@ public class text_gui {
                         return false;
                     } else {
                         db.setPort(Integer.parseInt(ans));
+                        return true;
+                    }
+                } else if (ans.equals("3")) {
+                    System.out.println("Type nick name or RETURN to return");
+                    ans = this.scan.nextLine();
+                    ans = ans.toUpperCase();
+                    if (ans.equals("RETURN")) {
+                        return false;
+                    } else {
+                        db.setLogin(ans);
                         return true;
                     }
 
