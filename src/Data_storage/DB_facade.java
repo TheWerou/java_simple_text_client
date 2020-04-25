@@ -17,7 +17,7 @@ public class DB_facade {
         this.send_list = new List_in();
         this.recive_list = new List_in();
         this.login = "MACIEK";
-        this.ip = "192.168.0.106";
+        this.ip = "192.168.0.108";
         this.port = 8123;
     }
 
@@ -29,8 +29,20 @@ public class DB_facade {
         return this.recive_list.get_from_list(e);
     }
 
+    public String getLogin() {
+        return login;
+    }
+
+    public int getPort() {
+        return port;
+    }
+
     public List_in getSend_list() {
         return send_list;
+    }
+
+    public String getIp() {
+        return ip;
     }
 
     public void add_send_msg(ArrayList<String> input)
@@ -39,6 +51,7 @@ public class DB_facade {
     }
 
     public void add_recived_list(ArrayList<String> input)
+
     {
         input.remove(0);
         recive_list.add_to_list(input);
@@ -53,13 +66,7 @@ public class DB_facade {
         this.recive_list.find_and_delete(input);
     }
 
-    public String getLogin() {
-        return login;
-    }
 
-    public void setLogin(String login) {
-        this.login = login;
-    }
 
     public void clear_send_list()
     {
@@ -71,12 +78,9 @@ public class DB_facade {
         this.recive_list.clear_all();
     }
 
-    public int getPort() {
-        return port;
-    }
 
-    public String getIp() {
-        return ip;
+    public void setLogin(String login) {
+        this.login = login;
     }
 
     public void setIp(String ip) {

@@ -16,7 +16,6 @@ public class text_gui {
         this.scan = new Scanner(System.in);
         this.facade = facade;
         this.db = db;
-        this.main_menu();
     }
 
     public boolean main_menu() {
@@ -193,19 +192,19 @@ public class text_gui {
         }
     }
 
-        public boolean Options() {
-            while (true) {
-                System.out.println("------------------------------");
-                System.out.println("Type number to change ");
-                System.out.println("1. present ip   " + db.getIp());
-                System.out.println("2. present port " + db.getPort());
-                System.out.println("3. present nick name" + db.getLogin());
-                System.out.println("RETURN. return to menu");
-                System.out.println("------------------------------");
+    public boolean Options() {
+        while (true) {
+            System.out.println("------------------------------");
+            System.out.println("Type number to change ");
+            System.out.println("1. present ip   " + db.getIp());
+            System.out.println("2. present port " + db.getPort());
+            System.out.println("3. present nick name" + db.getLogin());
+            System.out.println("RETURN. return to menu");
+            System.out.println("------------------------------");
 
-                String ans = this.scan.nextLine();
+            String ans = this.scan.nextLine();
 
-                if(ans.equals("1")) {
+            if(ans.equals("1")) {
                     System.out.println("Type new ip or RETURN to return");
                     ans = this.scan.nextLine();
                     ans = ans.toUpperCase();
@@ -248,21 +247,21 @@ public class text_gui {
             }
         }
 
-        public void cls() {
-            try {
-                final String os = System.getProperty("os.name");
+    public void cls() {
+        try {
+            final String os = System.getProperty("os.name");
 
-                if (os.contains("Windows")) {
-                    Runtime.getRuntime().exec("cls");
-                } else {
-                    Runtime.getRuntime().exec("clear");
-                }
-            } catch (final Exception e) {
-                // handle exept
+            if (os.contains("Windows")) {
+                Runtime.getRuntime().exec("cls");
+            } else {
+                Runtime.getRuntime().exec("clear");
             }
+        } catch (final Exception e) {
+            // handle exept
         }
-
     }
+
+}
 
 
 

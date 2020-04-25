@@ -5,6 +5,7 @@ import java.util.ArrayList;
 public class List_in
 {
     ArrayList<ArrayList<String>> mylist;
+
     public List_in()
     {
         this.mylist = new ArrayList<>();

@@ -11,6 +11,7 @@ public class Facade {
     private code_handler code;
     private Comunication com;
     private log_gen log;
+
     private String ip;
     private int port;
 
@@ -24,6 +25,7 @@ public class Facade {
         this.db = db;
 
     }
+
     public boolean send_ask(String to_who)
     {
         ArrayList<String> hlp = new ArrayList<String>();
@@ -144,6 +146,7 @@ public class Facade {
         }
     }
 
+
     private boolean start_com(String type)
     {
         if(com.startConnection(this.ip, this.port))
@@ -153,15 +156,24 @@ public class Facade {
             com.sendMessage(this.db.getLogin());
             msg = com.reciveMessage();
 
-            if(msg.equals("WELCOME"))
+            try
             {
-                com.sendMessage(type);
-                return true;
+                if(msg.equals("WELCOME"))
+                {
+                    com.sendMessage(type);
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
             }
-            else
+            catch (NullPointerException e)
             {
+                System.out.println("Cannot connect");
                 return false;
             }
+
         }
         else
         {

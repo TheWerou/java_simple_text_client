@@ -11,6 +11,7 @@ import java.util.logging.Logger;
 public class log_gen {
 
     private static final Logger LOGGER = Logger.getLogger(log_gen.class.getName());
+
     public log_gen()
     {
         Handler consoleHandler = null;
