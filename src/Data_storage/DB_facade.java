@@ -18,13 +18,13 @@ public class DB_facade {
     /** DB_facade()
      *  constructor of class - prepering class to work
      */
-    public DB_facade()
+    public DB_facade(String server_ip, int port)
     {
         this.send_list = new List_in();
         this.recive_list = new List_in();
         this.login = "MACIEK";
-        this.ip = "192.168.0.108";
-        this.port = 8123;
+        this.ip = server_ip;
+        this.port = port;
     }
 
     /** getRecived_list()
