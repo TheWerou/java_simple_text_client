@@ -7,17 +7,29 @@ import java.util.ArrayList;
 import java.util.Scanner;
 import java.lang.Thread;
 
+/**
+ * Class that show us text interface to communicate with user (mainly for program tests)
+ */
 public class text_gui {
     DB_facade db;
     Scanner scan;
     Facade facade;
 
+    /** text_gui(Facade facade, DB_facade db)
+     * constructor of text_gui (Prepres class to by used)
+     * @param facade obiect of class for easier server comunication
+     * @param db obiect of class responsible for storage
+     */
     public text_gui(Facade facade, DB_facade db) {
         this.scan = new Scanner(System.in);
         this.facade = facade;
         this.db = db;
     }
 
+    /** main_menu()
+     *  creates text main menu
+     * @return if true program ends
+     */
     public boolean main_menu() {
         boolean out = false;
         while (!out) {
@@ -51,6 +63,10 @@ public class text_gui {
         return true;
     }
 
+    /** create_order()
+     * cretes window to create order
+     * @return if true program ends
+     */
     public boolean create_order() {
         while (true) {
             System.out.println("Type recipient name or type RETURN");
@@ -71,6 +87,11 @@ public class text_gui {
         }
     }
 
+    /** check_invit()
+     * Menu for reciving invitations
+     * @return if true program ends
+     * @throws IOException
+     */
     public boolean check_invit() throws IOException {
         ArrayList<String> helper = new ArrayList<String>();
 
@@ -192,6 +213,10 @@ public class text_gui {
         }
     }
 
+    /**  Options()
+     * Menu to configure program
+     * @return if true program ends
+     */
     public boolean Options() {
         while (true) {
             System.out.println("------------------------------");
@@ -247,6 +272,9 @@ public class text_gui {
             }
         }
 
+    /**
+     * clear window
+     */
     public void cls() {
         try {
             final String os = System.getProperty("os.name");

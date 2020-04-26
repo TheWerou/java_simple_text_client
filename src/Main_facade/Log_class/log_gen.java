@@ -8,10 +8,16 @@ import java.util.logging.Handler;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+/**
+ * Class handles logs in program
+ */
 public class log_gen {
 
     private static final Logger LOGGER = Logger.getLogger(log_gen.class.getName());
 
+    /**
+     * Constructor set up program (basic settiengs for Logger)
+     */
     public log_gen()
     {
         Handler consoleHandler = null;
@@ -38,16 +44,28 @@ public class log_gen {
         }
     }
 
+    /** WARNING_log(String msg)
+     * Add warning log to log
+     * @param msg String msg message we want in log
+     */
     public void WARNING_log(String msg)
     {
         LOGGER.warning(msg);
     }
 
+    /** INFO_log(String msg)
+     * Add info log to log
+     * @param msg String msg message we want in log
+     */
     public void INFO_log(String msg)
     {
         LOGGER.info(msg);
     }
 
+    /** CONFIG_log(String msg)
+     * Add config log to log
+     * @param msg String msg message we want in log
+     */
     public void CONFIG_log(String msg)
     {
         LOGGER.config(msg);

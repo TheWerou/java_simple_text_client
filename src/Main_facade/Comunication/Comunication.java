@@ -6,6 +6,9 @@ import java.io.*;
 
 import java.net.Socket;
 
+/** Comunication
+ *  Class is responsible for reciving and sending data to server or from server
+ */
 public class Comunication
 {
 
@@ -15,12 +18,22 @@ public class Comunication
     private log_gen log;
     private boolean con_made;
 
+    /** Comunication(log_gen log)
+     * Constructor of program
+     * @param log object of class that handles logs in program
+     */
     public Comunication(log_gen log)
     {
         this.log = log;
         this.con_made = false;
     }
 
+    /** startConnection(String ip, int port)
+     * Method estabish connection with server
+     * @param ip ip to server
+     * @param port port to server
+     * @return true if connection was succesfull
+     */
     public boolean startConnection(String ip, int port)
     {
         try
@@ -41,11 +54,19 @@ public class Comunication
 
     }
 
+    /** sendMessage(String msg)
+     *  This method send mesage to server
+     * @param msg String that we want to send
+     */
     public void sendMessage(String msg)
     {
         out.println(msg);
     }
 
+    /** reciveMessage()
+     * Method recive last send String
+     * @return Recived String
+     */
     public String reciveMessage()
     {
         String resp = null;
@@ -61,6 +82,9 @@ public class Comunication
 
     }
 
+    /** stopConnection()
+     *  this method ends connection
+     */
     public void stopConnection()
     {
         if(this.isCon_made())
@@ -83,10 +107,18 @@ public class Comunication
 
     }
 
+    /** isCon_made()
+     *  return true if connection was made
+     * @return true if connection was made
+     */
     private boolean isCon_made() {
         return con_made;
     }
 
+    /** setCon_made(boolean con_made)
+     * set flag con_made
+     * @param con_made
+     */
     private void setCon_made(boolean con_made) {
         this.con_made = con_made;
     }

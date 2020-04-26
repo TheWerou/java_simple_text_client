@@ -6,15 +6,23 @@ import Main_facade.Log_class.log_gen;
 
 import java.util.ArrayList;
 
+/** Facade
+ * Class control sub class and uses it to simplyfy sending and reciving message
+ */
 public class Facade {
-    private DB_facade db;
-    private code_handler code;
-    private Comunication com;
-    private log_gen log;
+    private DB_facade db;               // DB_facade object is used for saving data
+    private code_handler code;          // code_handler is used to translate send string to list
+    private Comunication com;           // object that recive and send data to server
+    private log_gen log;                // object that help create logs in program
 
-    private String ip;
-    private int port;
+    private String ip;                  // ip of server
+    private int port;                   // port of server
 
+    /**
+     * constructor of main class (Prepres class to by used)
+     * @param db object of class that handles storage
+     * @param log object of class that handles log
+     */
     public Facade(DB_facade db,log_gen log)
     {
         this.ip = db.getIp();
@@ -26,6 +34,11 @@ public class Facade {
 
     }
 
+    /** send_ask(String to_who)
+     * Prepre and send mesage to server that client want to organise meeting and save it to send list
+     * @param to_who name of user to invite
+     * @return booleand true if connection was succesfull
+     */
     public boolean send_ask(String to_who)
     {
         ArrayList<String> hlp = new ArrayList<String>();
@@ -54,6 +67,11 @@ public class Facade {
         }
 
     }
+
+    /** send_check()
+     * Method check if invitation that was send by another class was change or check if klient get new invtation for him
+     * @return boolean true if connection was succesfull
+     */
     public boolean send_check()
     {
         ArrayList<String> list_com = new ArrayList<String>();
@@ -112,6 +130,12 @@ public class Facade {
 
     }
 
+    /** send_reply_code(String to_who, int choice)
+     * method send commend to accept or refuse invitation
+     * @param to_who user who invites
+     * @param choice int if choice == 0 accept invitation if choice == 1 refuse invitation  else delete invitation invitation
+     * @return boolean true if connection was succesfull
+     */
     public boolean send_reply_code(String to_who, int choice)
     {
         ArrayList<String> hlp = new ArrayList<String>();
@@ -146,8 +170,13 @@ public class Facade {
         }
     }
 
-
-    private boolean start_com(String type)
+    /**start_com(String type)
+     * Method starts comunnication login user and send inforamtion line
+     * This method is used by other methods in this class only
+     * @param line String that is send after succesfull login
+     * @return boolean true if connection was succesfull
+     */
+    private boolean start_com(String line)
     {
         if(com.startConnection(this.ip, this.port))
         {
@@ -160,7 +189,7 @@ public class Facade {
             {
                 if(msg.equals("WELCOME"))
                 {
-                    com.sendMessage(type);
+                    com.sendMessage(line);
                     return true;
                 }
                 else

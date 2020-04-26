@@ -4,16 +4,17 @@ import java.util.ArrayList;
 
 public class List_in
 {
-    ArrayList<ArrayList<String>> mylist;
+    private ArrayList<ArrayList<String>> mylist;
 
     public List_in()
     {
+
         this.mylist = new ArrayList<>();
     }
 
     public void add_to_list(ArrayList<String> list)
     {
-        mylist.add(list);
+            mylist.add(list);
     }
     public ArrayList<String> get_from_list(int e)
     {
@@ -24,7 +25,7 @@ public class List_in
         return mylist;
     }
 
-    public  int lenght_of_list()
+    public int lenght_of_list()
     {
         return mylist.size();
     }
