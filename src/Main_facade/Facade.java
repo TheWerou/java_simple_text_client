@@ -46,20 +46,29 @@ public class Facade {
         if(this.start_com(helper))
         {
             helper = to_who + " ASK " + this.db.getLogin();
-            String msg = com.reciveMessage();
-
-            if(msg.equals("END"))
-            {
-                hlp = this.code.string_to_list(helper);
-                this.db.add_send_msg(hlp);
-                com.stopConnection();
-                return  true;
+            try{
+                String msg = com.reciveMessage();
+                if(msg.equals("END"))
+                {
+                    hlp = this.code.string_to_list(helper);
+                    this.db.add_send_msg(hlp);
+                    com.stopConnection();
+                    return  true;
+                }
+                else
+                {
+                    com.stopConnection();
+                    return  false;
+                }
             }
-            else
+            catch (NullPointerException e)
             {
+                System.out.println("Server side error");
                 com.stopConnection();
                 return  false;
             }
+
+
         }
         else {
 
